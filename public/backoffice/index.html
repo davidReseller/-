@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="./index.css" />
+
+        <link rel="shortcut icon" href="../favicon/favicon.ico" />
+
+        <script defer src="/__/firebase/7.9.3/firebase-app.js"></script>
+        <script defer src="/__/firebase/7.9.3/firebase-auth.js"></script>
+        <script defer src="/__/firebase/7.9.3/firebase-database.js"></script>
+        <script defer src="/__/firebase/7.9.3/firebase-messaging.js"></script>
+        <script defer src="/__/firebase/7.9.3/firebase-storage.js"></script>
+        <script defer src="/__/firebase/init.js"></script>
+        <script src="../assets/js/jquery.min.js"></script>
+        <script src="./index.js"></script>
+
+        <title>백오피스</title>
+    </head>
+    <body>
+        <section class="wrap">
+            <div class="title">
+                <span>유저 테이블</span>
+                <button id="addUser">추가</button>
+            </div>
+            <div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>이메일</th>
+                            <th>전화번호</th>
+                            <th>유저 정보 변경</th>
+                            <th>유저 삭제</th>
+                        </tr>
+                    </thead>
+                    <tbody id="userTableData"></tbody>
+                </table>
+            </div>
+        </section>
+        <section class="wrap">
+            <div class="title">
+                제품 테이블
+            </div>
+            <div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>제품</th>
+                            <th>시리얼</th>
+                            <th>유저 이메일</th>
+                            <th>유저 전화번호</th>
+                            <th>유저 추가</th>
+                            <th>유저 삭제</th>
+                        </tr>
+                    </thead>
+                    <tbody id="productTableData"></tbody>
+                </table>
+            </div>
+        </section>
+        <div id="editUserModal" class="bg">
+            <div class="modal-wrap">
+                <div class="modal-header">
+                    <div class="modal-title">
+                        <span>유저 정보 변경</span>
+                    </div>
+                    <div class="modal-close">
+                        <button class="closeBtn"></button>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <div class="modal-body-gorup">
+                        <label class="modal-body-title">이메일</label>
+                        <input
+                            type="email"
+                            id="uEmail"
+                            name="uEmail"
+                            class="modal-body-input"
+                            placeholder="이메일"
+                            required
+                        />
+                    </div>
+                    <div class="modal-body-gorup">
+                        <label class="modal-body-title">전화번호</label>
+                        <input
+                            type="tel"
+                            id="uPhone"
+                            name="uPhone"
+                            pattern="010[0-9]{4}[0-9]{4}"
+                            class="modal-body-input"
+                            placeholder="전화번호(-빼고)"
+                            required
+                        />
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <div class="cancel">
+                        <button>취소</button>
+                    </div>
+                    <div class="confirm">
+                        <button>변경</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
